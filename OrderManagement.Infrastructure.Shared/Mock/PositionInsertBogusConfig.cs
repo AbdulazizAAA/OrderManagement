@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using OrderManagement.Domain.Entities;
 
-namespace OrderManagement.API.Infrastructure.Shared.Mock
+namespace OrderManagement.Infrastructure.Shared.Mock
 {
     public class PositionInsertBogusConfig : Faker<OrderItem>
     {

@@ -1,6 +1,6 @@
-﻿using OrderManagement.API.Application.Parameters;
+﻿using OrderManagement.Application.Parameters;
 
-namespace OrderManagement.API.Application.Wrappers
+namespace OrderManagement.Application.Wrappers
 {
     public class PagedDataTableResponse<T> : Response<T>
     {

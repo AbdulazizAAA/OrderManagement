@@ -3,7 +3,7 @@ using Microsoft.OpenApi;
 using System;
 using System.Text.Json;
 
-namespace OrderManagement.API.WebApi.Extensions
+namespace OrderManagement.Web.Extensions
 {
     public static class ServiceExtensions
     {

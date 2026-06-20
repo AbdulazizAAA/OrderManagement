@@ -1,9 +1,9 @@
 ﻿using OrderManagement.Application.Interfaces;
-using OrderManagement.API.Infrastructure.Shared.Services;
+using OrderManagement.Infrastructure.Shared.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace OrderManagement.API.Infrastructure.Shared
+namespace OrderManagement.Infrastructure.Shared
 {
     public static class ServiceRegistration
     {

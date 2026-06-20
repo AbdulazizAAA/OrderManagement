@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OrderManagement.API.Application.Wrappers
+namespace OrderManagement.Application.Wrappers
 {
     public class Response<T>
     {

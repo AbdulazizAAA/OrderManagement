@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OrderManagement.API.Application.Exceptions
+namespace OrderManagement.Application.Exceptions
 {
     public class ValidationException : Exception
     {

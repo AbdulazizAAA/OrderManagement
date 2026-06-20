@@ -1,8 +1,8 @@
-using OrderManagement.API.Application;
+using OrderManagement.Application;
 using OrderManagement.Infrastructure.Persistence;
 using OrderManagement.Infrastructure.Persistence.Contexts;
-using OrderManagement.API.Infrastructure.Shared;
-using OrderManagement.API.WebApi.Extensions;
+using OrderManagement.Infrastructure.Shared;
+using OrderManagement.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;

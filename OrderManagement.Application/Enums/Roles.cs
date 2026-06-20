@@ -1,4 +1,4 @@
-﻿namespace OrderManagement.API.Application.Enums
+﻿namespace OrderManagement.Application.Enums
 {
     public enum Roles
     {

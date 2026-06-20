@@ -1,15 +1,13 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using OrderManagement.API.Application.Behaviours;
-using OrderManagement.API.Application.Helpers;
+using OrderManagement.Application.Behaviours;
+using OrderManagement.Application.Helpers;
 using OrderManagement.Application.Interfaces;
 using OrderManagement.Application.Services;
-using OrderManagement.Domain.Entities;
-using OrderManagement.Domain.Interfaces;
 using System.Reflection;
 
-namespace OrderManagement.API.Application
+namespace OrderManagement.Application
 {
     public static class ServiceExtensions
     {

@@ -3,7 +3,7 @@ using Bogus;
 using OrderManagement.Domain.Entities;
 using System;
 
-namespace OrderManagement.API.Infrastructure.Shared.Mock
+namespace OrderManagement.Infrastructure.Shared.Mock
 {
     public class PositionSeedBogusConfig : AutoFaker<OrderItem>
     {

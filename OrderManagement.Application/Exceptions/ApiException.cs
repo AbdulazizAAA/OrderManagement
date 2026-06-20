@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace OrderManagement.API.Application.Exceptions
+namespace OrderManagement.Application.Exceptions
 {
     public class ApiException : Exception
     {

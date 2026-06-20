@@ -1,9 +1,9 @@
 ﻿using OrderManagement.Application.Interfaces;
 using OrderManagement.Domain.Entities;
-using OrderManagement.API.Infrastructure.Shared.Mock;
+using OrderManagement.Infrastructure.Shared.Mock;
 using System.Collections.Generic;
 
-namespace OrderManagement.API.Infrastructure.Shared.Services
+namespace OrderManagement.Infrastructure.Shared.Services
 {
     public class MockService : IMockService
     {

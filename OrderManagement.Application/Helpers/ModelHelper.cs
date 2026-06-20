@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace OrderManagement.API.Application.Helpers
+namespace OrderManagement.Application.Helpers
 {
     public class ModelHelper : IModelHelper
     {

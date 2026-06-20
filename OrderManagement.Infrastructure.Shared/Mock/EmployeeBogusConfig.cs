@@ -4,7 +4,7 @@ using OrderManagement.Domain.Entities;
 //using OrderManagement.API.Domain.Enums;
 using System;
 
-namespace OrderManagement.API.Infrastructure.Shared.Mock
+namespace OrderManagement.Infrastructure.Shared.Mock
 {
     public class EmployeeBogusConfig : AutoFaker<Customer>
     {

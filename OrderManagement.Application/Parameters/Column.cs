@@ -1,4 +1,4 @@
-﻿namespace OrderManagement.API.Application.Parameters
+﻿namespace OrderManagement.Application.Parameters
 {
     public class Column
     {
