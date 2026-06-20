@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C4E7CBCD-8175-4879-B774-FD1FFC4F9A9B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{46803ECA-7B7B-4057-8C63-60EB616E0FD3}"
-	ProjectSection(SolutionItems) = preProject
-		OrderManagement.Domain\OrderManagement.Domain.csproj = OrderManagement.Domain\OrderManagement.Domain.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D21D2C7D-DBD6-4982-A870-3170A44CB2D4}"
 EndProject
@@ -21,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Infrastructure.Shared", "OrderManagement.Infrastructure.Shared\OrderManagement.Infrastructure.Shared.csproj", "{49350115-7045-EA00-5980-2833E5018CFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.API.WebApi", "OrderManagement.API.WebApi\OrderManagement.API.WebApi.csproj", "{4404C244-D664-C119-6944-B716F882C551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Domain", "OrderManagement.Domain\OrderManagement.Domain.csproj", "{EC90A9CC-97F4-4221-1D90-D5D6EACC7335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +47,10 @@ Global
 		{4404C244-D664-C119-6944-B716F882C551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4404C244-D664-C119-6944-B716F882C551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4404C244-D664-C119-6944-B716F882C551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC90A9CC-97F4-4221-1D90-D5D6EACC7335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC90A9CC-97F4-4221-1D90-D5D6EACC7335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC90A9CC-97F4-4221-1D90-D5D6EACC7335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC90A9CC-97F4-4221-1D90-D5D6EACC7335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +61,7 @@ Global
 		{044723F8-95F3-265A-E9A4-31AED99C462D} = {D21D2C7D-DBD6-4982-A870-3170A44CB2D4}
 		{49350115-7045-EA00-5980-2833E5018CFD} = {D21D2C7D-DBD6-4982-A870-3170A44CB2D4}
 		{4404C244-D664-C119-6944-B716F882C551} = {C4E7CBCD-8175-4879-B774-FD1FFC4F9A9B}
+		{EC90A9CC-97F4-4221-1D90-D5D6EACC7335} = {46803ECA-7B7B-4057-8C63-60EB616E0FD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B48641F5-95A0-421D-96B4-8550278373E4}
