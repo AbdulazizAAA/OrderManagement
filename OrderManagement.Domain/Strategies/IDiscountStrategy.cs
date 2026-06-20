@@ -3,5 +3,6 @@
 public interface IDiscountStrategy
 {
     string Name { get; }
-    decimal Calculate(decimal total);
+    Domain.Enums.DiscountStrategy StrategyType { get; }
+    decimal Calculate(decimal subTotal, int itemCount);
 }

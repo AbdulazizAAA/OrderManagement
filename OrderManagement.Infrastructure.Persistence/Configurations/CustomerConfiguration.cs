@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OrderManagement.Domain.Entities;
+using System;
+using System.Reflection.Emit;
 
 namespace OrderManagement.Infrastructure.Persistence.Configurations;
 
@@ -12,14 +14,19 @@ public class CustomerConfiguration
     {
         builder.ToTable("Customers");
 
-        builder.HasKey(x => x.Id);
+        builder.HasKey(c => c.Id);
+        builder.Property(c => c.FirstName).IsRequired().HasMaxLength(100);
+        builder.Property(c => c.LastName).IsRequired().HasMaxLength(100);
+        builder.Property(c => c.Email).IsRequired().HasMaxLength(255);
+        builder.HasIndex(c => c.Email).IsUnique();
+        builder.HasMany(c => c.Orders).WithOne(o => o.Customer).HasForeignKey(o => o.CustomerId);
 
-        builder.Property(x => x.Name)
-            .HasMaxLength(200)
-            .IsRequired();
+        var customerId1 = Guid.Parse("11111111-1111-1111-1111-111111111111");
+        var customerId2 = Guid.Parse("22222222-2222-2222-2222-222222222222");
 
-        builder.Property(x => x.Email)
-            .HasMaxLength(250)
-            .IsRequired();
+        builder.HasData(
+            new { Id = customerId1, FirstName = "Abdelaziz", LastName = "Ahmed", Email = "Abdelaziz@gmail.com", Phone = "555-0101", CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc) },
+            new { Id = customerId2, FirstName = "Khaled", LastName = "Mohmaed", Email = "Khaled@example.com", Phone = "555-0102", CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc) }
+        );
     }
 }

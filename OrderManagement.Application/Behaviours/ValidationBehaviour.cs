@@ -26,7 +26,7 @@ namespace OrderManagement.Application.Behaviours
                 var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
 
                 if (failures.Count != 0)
-                    throw new Exceptions.ValidationException(failures);
+                    throw new System.Exception(string.Join(",",failures));
             }
             return await next();
         }

@@ -5,17 +5,14 @@ using System.Threading.Tasks;
 
 namespace OrderManagement.Domain.Interfaces;
 
-public interface IRepository<T>
-    where T : class
+public interface IRepository<T> where T : class
 {
     Task<T?> GetByIdAsync(Guid id);
-
-    Task<List<T>> ListAsync(
-        ISpecification<T> specification);
-
+    Task<IReadOnlyList<T>> ListAllAsync();
+    Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+    Task<int> CountAsync(ISpecification<T> spec);
     Task AddAsync(T entity);
-
     void Update(T entity);
-
     void Delete(T entity);
 }
+

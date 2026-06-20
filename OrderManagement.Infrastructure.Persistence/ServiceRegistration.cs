@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OrderManagement.Domain.Entities;
 using OrderManagement.Domain.Factories;
 using OrderManagement.Domain.Interfaces;
 using OrderManagement.Domain.Strategies;
 using OrderManagement.Domain.Strategies.Base;
 using OrderManagement.Infrastructure.Persistence.Contexts;
-using OrderManagement.Infrastructure.Persistence.Repositories;
 
 namespace OrderManagement.Infrastructure.Persistence
 {
@@ -26,20 +24,20 @@ namespace OrderManagement.Infrastructure.Persistence
                     options.UseSqlServer(
                       configuration.GetConnectionString("DefaultConnection")));
             }
-            services.AddScoped<IUnitOfWork>(
-              provider => provider.GetRequiredService<ApplicationDbContext>());
+         
             //Sample Code
             #region Repositories
 
-            services.AddTransient<IDiscountStrategyFactory, DiscountStrategyFactory>();
+            services.AddTransient<IDiscountStrategyResolver, DiscountStrategyResolver>();
 
-            services.AddTransient<IDiscountStrategy, PremiumCustomerDiscountStrategy>();
-            services.AddTransient<IDiscountStrategy, FixedDiscountStrategy>();
+            services.AddTransient<IDiscountStrategy, BulkDiscountStrategy>();
+            services.AddTransient<IDiscountStrategy, NoDiscountStrategy>();
             services.AddTransient<IDiscountStrategy, PercentageDiscountStrategy>();
+            services.AddTransient<IDiscountStrategy,LoyaltyDiscountStrategy>();
+            services.AddTransient<IDiscountStrategy,FlatAmountDiscountStrategy>();
 
             services.AddTransient<IOrderFactory, OrderFactory>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
-            //services.AddTransient<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
+
 
             #endregion Repositories
         }

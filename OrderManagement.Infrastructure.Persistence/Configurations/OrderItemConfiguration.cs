@@ -13,17 +13,10 @@ public class OrderItemConfiguration
     {
         builder.ToTable("OrderItems");
 
-        builder.HasKey(x => x.Id);
-
-        builder.Property(x => x.ProductName)
-            .HasMaxLength(250)
-            .IsRequired();
-
-        builder.Property(x => x.UnitPrice)
-            .HasPrecision(18, 2);
-
-        builder.HasOne<Order>()
-            .WithMany(x => x.Items)
-            .HasForeignKey("OrderId");
+        builder.HasKey(i => i.Id);
+        builder.Property(i => i.ProductName).IsRequired().HasMaxLength(200);
+        builder.Property(i => i.ProductCode).IsRequired().HasMaxLength(50);
+        builder.Property(i => i.UnitPrice).HasColumnType("decimal(18,2)");
+        builder.Ignore(i => i.TotalPrice);
     }
 }

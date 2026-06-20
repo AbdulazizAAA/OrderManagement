@@ -15,19 +15,12 @@ public class OrderConfiguration
     {
         builder.ToTable("Orders");
 
-        builder.HasKey(x => x.Id);
-
-        builder.Property(x => x.Discount)
-            .HasPrecision(18, 2);
-
-        builder.HasOne<Customer>()
-            .WithMany()
-            .HasForeignKey(x => x.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-        builder.Metadata
-            .FindNavigation(nameof(Order.Items))
-            ?.SetPropertyAccessMode(
-                PropertyAccessMode.Field);
+        builder.HasKey(o => o.Id);
+        builder.Property(o => o.OrderNumber).IsRequired().HasMaxLength(50);
+        builder.HasIndex(o => o.OrderNumber).IsUnique();
+        builder.Property(o => o.DiscountAmount).HasColumnType("decimal(18,2)");
+        builder.HasMany(o => o.Items).WithOne().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Cascade);
+        builder.Ignore(o => o.DomainEvents);
+ 
     }
 }
